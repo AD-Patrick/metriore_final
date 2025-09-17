@@ -8,6 +8,7 @@ El objetivo es sencillo: unificar en un solo lugar todo el flujo de trabajo, des
 - 📚 Documento completo: [TFG - Patrick Albó Sureda](./TFG_Final_Patrick_Albo_Sureda.pdf)  
 - 🌐 Sitio web: [metriore.com](https://metriore.com)  
 - 💻 Repositorio: [GitHub - AD-Patrick/metriore_final](https://github.com/AD-Patrick/metriore_final)
+- 🎬 Demo: [YouTube](https://youtu.be/xyG6ZvKocNo)
 
 ---
 
