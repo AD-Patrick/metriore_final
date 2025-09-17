@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom color system for Metriore - keeping it simple but effective */
+
+@layer base {
+  :root {
+    /* Main color palette */
+    --background: 220 24% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Brand colors */
+    --primary: 164 72% 59%;
+    --primary-foreground: 220 24% 8%;
+
+    --secondary: 42 100% 64%;
+    --secondary-foreground: 220 24% 8%;
+
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 8% 60%;
+
+    --accent: 42 100% 64%;
+    --accent-foreground: 220 24% 8%;
+
+    --destructive: 15 68% 51%;
+    --destructive-foreground: 0 0% 95%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 95%;
+
+    --warning: 42 100% 64%;
+    --warning-foreground: 220 24% 8%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 16%;
+    --ring: 164 72% 59%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar colors */
+    --sidebar-background: 220 24% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 164 72% 59%;
+    --sidebar-primary-foreground: 220 24% 8%;
+    --sidebar-accent: 220 20% 16%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 164 72% 59%;
+
+    /* Brand colors for components */
+    --xanthous: 42 100% 64%;
+    --xanthous-foreground: 220 24% 8%;
+    --aquamarine: 164 72% 59%;
+    --aquamarine-foreground: 220 24% 8%;
+    --flame: 15 68% 51%;
+    --flame-foreground: 0 0% 95%;
+
+    /* Simple gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(164 72% 59%), hsl(164 72% 69%));
+    --gradient-secondary: linear-gradient(135deg, hsl(42 100% 64%), hsl(42 100% 74%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 24% 8%), hsl(220 20% 12%));
+    
+    /* Chart colors */
+    --chart-youtube: 0 100% 50%;
+    --chart-tiktok: 0 0% 0%;
+    --chart-instagram: 320 100% 50%;
+    --chart-rumble: 120 100% 40%;
+    --chart-spotify: 120 100% 30%;
+    --chart-primary: 164 72% 59%;
+    --chart-secondary: 42 100% 64%;
+
+    /* Basic shadows */
+    --shadow-primary: 0 10px 30px -10px hsl(164 72% 59% / 0.3);
+    --shadow-secondary: 0 10px 30px -10px hsl(42 100% 64% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(220 24% 8% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom component styles */
+  .enhanced-card {
+    @apply bg-card border border-border/50 shadow-[var(--shadow-card)];
+  }
+
+  .accent-card {
+    @apply bg-gradient-to-br from-xanthous/10 to-xanthous/5 border border-xanthous/20;
+  }
+
+  .primary-card {
+    @apply bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20;
+  }
+
+  .interactive-card {
+    @apply transition-all duration-300 hover:shadow-[var(--shadow-primary)] hover:border-primary/30;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-gradient-primary text-primary-foreground shadow-[var(--shadow-primary)] hover:shadow-[var(--shadow-primary)] hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-secondary text-secondary-foreground shadow-[var(--shadow-secondary)] hover:shadow-[var(--shadow-secondary)] hover:scale-105;
+  }
+
+  .btn-destructive {
+    @apply border border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground transition-all duration-300;
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes glow {
+    from { box-shadow: 0 0 20px hsl(var(--primary) / 0.2); }
+    to { box-shadow: 0 0 30px hsl(var(--primary) / 0.4); }
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/60 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/80;
+  }
+}

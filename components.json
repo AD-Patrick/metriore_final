@@ -1,0 +1,22 @@
+{
+  "name": "metriore-ui-config",
+  "version": "1.0.0",
+  "description": "Custom UI component configuration for Metriore",
+  "style": "custom",
+  "framework": "react",
+  "typescript": true,
+  "tailwind": {
+    "config": "tailwind.config.ts",
+    "css": "src/index.css",
+    "baseColor": "slate",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  }
+}

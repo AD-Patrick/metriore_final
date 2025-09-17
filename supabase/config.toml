@@ -1,0 +1,10 @@
+project_id = "pkbskaocgqfidpuiiieo"
+
+[functions.youtube-sync]
+verify_jwt = false
+
+[functions.youtube-channel-id-lookup]
+verify_jwt = false
+
+[functions.user-lookup]
+verify_jwt = true
